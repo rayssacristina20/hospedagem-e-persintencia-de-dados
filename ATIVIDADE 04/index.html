@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horas Complementares</title>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h2>Controle de Atividades Complementares</h2>
+    <form id="atividadesForm">
+        <div class="form-group">
+            <label for="tipoAtividade">Tipo de Atividade:</label>
+            <select id="tipoAtividade" required>
+                <option value="">Selecione o tipo de atividade</option>
+                <optgroup label="Atividades de Ensino">
+                    <option value="estagio">Estágio Extracurricular</option>
+                </optgroup>
+                <optgroup label="Atividades de Extensão">
+                    <option value="projetoExtensao">Projeto de extensão</option>
+                    <option value="atividadesCulturais">Atividades culturais</option>
+                    <option value="visitasTecnicas">Visitas Técnicas</option>
+                    <option value="visitasFeiras">Visitas a Feiras e Exposições</option>
+                    <option value="cursosIdiomas">Cursos de Idiomas</option>
+                    <option value="palestrasOuvinte">Palestras, Seminários e Congressos (ouvinte)</option>
+                    <option value="palestrasApresentador">Palestras, Seminários e Congressos (apresentador)</option>
+                    <option value="empresaJunior">Projeto Empresa Júnior</option>
+                </optgroup>
+                <optgroup label="Atividades de Pesquisa">
+                    <option value="iniciacaoCientifica">Iniciação Científica</option>
+                    <option value="artigoPeriodico">Publicação de artigos em periódicos</option>
+                    <option value="artigoCongresso">Publicação de artigos em congressos</option>
+                    <option value="capituloLivro">Publicação de capítulo de livro</option>
+                    <option value="resumoAnais">Publicação de resumos em anais</option>
+                    <option value="patentes">Registro de patentes</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="nomeAtividade">Nome da Atividade:</label>
+            <input type="text" id="nomeAtividade" required>
+        </div>
+
+        <div class="form-group">
+            <label for="horasRealizadas">Quantidade de Horas:</label>
+            <input type="number" id="horasRealizadas" min="0" required>
+        </div>
+
+        <button type="submit">Calcular Horas</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <div class="tabela-container">
+        <h3>Registro de Atividades</h3>
+        <table id="tabelaAtividades">
+            <thead>
+                <tr>
+                    <th>Tipo de Atividade</th>
+                    <th>Nome da Atividade</th>
+                    <th>Horas Realizadas</th>
+                    <th>Limite de Horas</th>
+                    <th>Aproveitamento</th>
+                    <th>Horas Aproveitadas</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5"><strong>Total de Horas Aproveitadas:</strong></td>
+                    <td id="totalHoras">0</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <script src="javascript.js"></script>
+</body>
+
+</html>
