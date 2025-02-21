@@ -57,5 +57,4 @@ vercel
 
 ---
 
-Agora o sistema estará disponível online! Para qualquer dúvida, consulte a documentação do Firebase ou do Vercel. 🚀
 
